@@ -35,18 +35,18 @@ namespace WallEGarbageCollector
 
             string[] directionsAllowed = { "N", "S", "E", "O" }; // Create and initialize array of allowed values
 
-            List<Tuple<int, int>> MemoryPositions = new List<Tuple<int, int>>(); // create a List of Tuple<int, int>
+            List<Tuple<int, int>> MemoryPositions = new List<Tuple<int, int>>(); // Create a List of Tuple<int, int>
 
-            int x = 0;
-            int y = 0;
+            int x = 0; // Horizontal variable
+            int y = 0; // Vertical variable
 
             SavePos(MemoryPositions, x, y); // Save (0,0) position
 
             foreach (char value in directions) // iterate over directions of user prompt
             {
-                if (directionsAllowed.Any(x => x == value.ToString())) // verify allowed values
+                if (directionsAllowed.Any(x => x == value.ToString())) // Verify allowed values
                 {
-                    // Process...
+                    // Process Moves
                     if (value == 'N')
                     {
                         y++;
@@ -73,18 +73,18 @@ namespace WallEGarbageCollector
                 }
                 else
                 {
-                    Console.WriteLine($"There is an invalid input with value '{value}'."); // verify disallowed inputs
+                    Console.WriteLine($"There is an invalid input with value '{value}'."); // Verify and print disallowed inputs
                 }
             }
 
-            output = $"Collected: {counter}";
+            output = $"Collected: {counter}"; // Output var
             Console.WriteLine(output);
 
-            foreach (var t in MemoryPositions) // print memory positions
+            foreach (var t in MemoryPositions) 
             {
-                Console.WriteLine($"Positions: {t.ToValueTuple()}");
+                Console.WriteLine($"Positions: {t.ToValueTuple()}"); // Print in-memory positions
             }
-            counter = 0; // restart counter
+            counter = 0; // Restart counter
             Console.WriteLine("===========================================");
             Console.WriteLine();
 
