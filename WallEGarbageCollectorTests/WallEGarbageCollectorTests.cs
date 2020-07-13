@@ -46,5 +46,19 @@ namespace WallEGarbageCollector
             // assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void TestCaseForMoreMoves()
+        {
+            // arrange
+            var input = "NENONENOOOOSS";
+
+            // act
+            var actual = WallEGarbageCollector.CollectGarbage(input);
+            var expected = "Collected: 14";
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
