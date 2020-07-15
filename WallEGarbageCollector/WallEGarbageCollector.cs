@@ -24,15 +24,12 @@ namespace WallEGarbageCollector
                     break; // Loop break
                 }
 
-                CollectGarbage(directions);
+                CollectGarbage(directions); //Call method
             }
         }
 
-        public static string CollectGarbage(string input)
+        public static string CollectGarbage(string directions)
         {
-            string output = string.Empty; // Create string to output retrieve
-            string directions = input; // Get string from user input
-
             string[] directionsAllowed = { "N", "S", "E", "O" }; // Create and initialize array of allowed values
 
             List<Tuple<int, int>> MemoryPositions = new List<Tuple<int, int>>(); // Create a List of Tuple<int, int>
@@ -77,8 +74,8 @@ namespace WallEGarbageCollector
                 }
             }
 
-            output = $"Collected: {counter}"; // Output var
-            Console.WriteLine(output);
+            string output = $"Collected: {counter}"; // Output var
+            Console.WriteLine(output); // Print collected values to console
 
             foreach (var t in MemoryPositions) 
             {
